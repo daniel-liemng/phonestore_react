@@ -8,7 +8,7 @@ import CartColumns from "./CartColumns";
 import CartList from "./CartList";
 import CartTotals from "./CartTotals";
 
-const Cart = () => {
+const Cart = props => {
   const { cart } = useContext(ProductContext);
 
   return (
@@ -18,7 +18,7 @@ const Cart = () => {
           <Title name="your" title="cart" />
           <CartColumns />
           <CartList cart={cart} />
-          <CartTotals />
+          <CartTotals history={props.history} />
         </>
       ) : (
         <EmptyCart />
